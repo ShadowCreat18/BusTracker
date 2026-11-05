@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paradas",
+  "info": {
+    "singularName": "parada",
+    "pluralName": "paradas",
+    "displayName": "Parada",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wialon_id": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "lat": {
+      "type": "float"
+    },
+    "lng": {
+      "type": "float"
+    },
+    "rutas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ruta.ruta",
+      "inversedBy": "paradas"
+    }
+  }
+}

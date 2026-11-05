@@ -1,0 +1,68 @@
+# ==============================================================================
+# BusTracker — Archivos Ignorados por Git (.gitignore)
+# ==============================================================================
+
+# Sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Angular, Ionic y compilación web
+.angular/
+.ionic/
+www/
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Strapi Backend
+rutas-backend/.tmp/
+rutas-backend/dist/
+rutas-backend/build/
+rutas-backend/.strapi/
+rutas-backend/.strapi-updater.json
+rutas-backend/.strapi-cloud.json
+rutas-backend/exports/
+rutas-backend/.env
+*.sqlite
+*.sqlite3
+*.db
+
+# Android y Gradle (compilación local de Capacitor)
+rutas-frontend/android/.gradle/
+rutas-frontend/android/.kotlin/
+rutas-frontend/android/build/
+rutas-frontend/android/app/build/
+rutas-frontend/android/local.properties
+rutas-frontend/android/.navigation/
+rutas-frontend/android/captures/
+rutas-frontend/android/.idea/
+rutas-frontend/android/*.iml
+
+# Archivos comprimidos redundantes
+*.zip
+*.tar.gz
+*.rar
+
+# Editores e IDEs
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,142 @@
+.welcome-content {
+  --background: url('../../assets/bg.png') no-repeat center center / cover;
+  color: white;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100%;
+  padding: 60px 20px 40px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Diseño Premium de Bienvenida Original */
+
+.logo-hero {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: slideDown 0.8s ease-out;
+  
+  .main-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    animation: logoFloat 4s ease-in-out infinite; 
+  }
+  
+  .app-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  
+  .app-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+}
+
+.features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.icon-box {
+  min-width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.bg-blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.bg-purple { background: linear-gradient(135deg, #a855f7, #7e22ce); }
+.bg-green { background: linear-gradient(135deg, #22c55e, #16a34a); }
+
+.feature-card {
+  h3 {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1e293b; 
+  }
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+}
+
+.action-footer {
+  width: 100%;
+  text-align: center;
+}
+
+.gradient-btn {
+  --background: linear-gradient(90deg, #ff007f 0%, #7000ff 100%);
+  --background-activated: linear-gradient(90deg, #d6006c 0%, #5d00d6 100%);
+  --border-radius: 14px;
+  --box-shadow: 0 8px 24px rgba(112, 0, 255, 0.4);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

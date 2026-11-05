@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rutas",
+  "info": {
+    "singularName": "ruta",
+    "pluralName": "rutas",
+    "displayName": "Ruta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wialon_id": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string"
+    },
+    "polilinea": {
+      "type": "text"
+    },
+    "paradas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::parada.parada",
+      "mappedBy": "rutas"
+    }
+  }
+}

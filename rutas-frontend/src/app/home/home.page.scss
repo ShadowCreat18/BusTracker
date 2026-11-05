@@ -1,0 +1,592 @@
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 1; 
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
+}
+
+.premium-page {
+  --background: url('../../assets/bg.png') no-repeat center center / cover;
+}
+
+.premium-menu {
+  --ion-background-color: url('../../assets/bg.png') no-repeat center center / cover;
+}
+
+.glass-toolbar {
+  --background: rgba(30, 58, 138, 0.85); 
+  backdrop-filter: blur(10px);
+  --color: white;
+}
+
+.ion-palette-dark .glass-toolbar {
+  --background: rgba(15, 23, 42, 0.9); /* Azul muy oscuro premium */
+}
+
+.glass-content {
+  --background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+ion-menu ion-item {
+  --background: transparent;
+}
+
+.menu-item-glass {
+  --background: rgba(255, 255, 255, 0.85);
+  color: var(--ion-color-dark);
+}
+
+
+.dark-mode-item {
+  margin: 10px 15px;
+  border-radius: 12px;
+  --background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.ion-palette-dark .dark-mode-item {
+  --background: rgba(40, 40, 40, 0.9);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.dark-mode-icon {
+  color: var(--ion-color-primary);
+}
+
+/* Nuevos Estilos del Menú Lateral Premium */
+.menu-header-bg {
+  background: linear-gradient(135deg, var(--ion-color-primary) 0%, var(--ion-color-tertiary) 100%);
+  padding: 40px 20px 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.ion-palette-dark .menu-header-bg {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.menu-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: logoFloat 4s ease-in-out infinite; /* ANIMACIÓN MANTENIDA */
+}
+
+.menu-app-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.menu-app-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.transparent-list {
+  background: transparent;
+}
+
+.transparent-footer {
+  background: transparent;
+  padding: 10px 16px 20px;
+}
+
+.menu-footer-card {
+  background: rgba(var(--ion-color-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--ion-color-primary-rgb), 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  ion-icon {
+    font-size: 2rem;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ion-color-dark);
+    line-height: 1.3;
+  }
+}
+
+
+
+.app-title-header {
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Pantalla de carga */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ion-color-step-50, #f4f5f8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+  
+  .loading-content {
+    text-align: center;
+    color: var(--ion-color-medium);
+    
+    ion-spinner {
+      transform: scale(2);
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Estilos Premium para la Lista de Rutas (Tarjetas) */
+.list-padding {
+  padding: 10px 15px;
+  background: transparent;
+}
+
+.route-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+}
+
+.ion-palette-dark .route-card {
+  background: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.route-color-bar {
+  width: 8px;
+  flex-shrink: 0;
+  /* El color de fondo se inyecta via HTML [style.backgroundColor] */
+}
+
+.transparent-item {
+  --background: transparent;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.route-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ion-color-dark);
+  margin-bottom: 2px;
+}
+
+.ion-palette-dark .route-title {
+  color: white;
+}
+
+.route-subtitle {
+  font-size: 0.8rem;
+  color: var(--ion-color-medium);
+  margin: 0;
+}
+
+.modern-toggle {
+  padding-right: 5px;
+}
+
+.fab-location {
+  bottom: 20px; 
+}
+
+/* Estilos para la tarjeta emergente de detalles de parada */
+.stop-info-card {
+  padding: 10px;
+  text-align: center;
+  
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    
+    ion-icon {
+      vertical-align: text-bottom;
+    }
+  }
+  
+  h2 {
+    margin-top: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ion-color-dark);
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .stop-header-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(var(--ion-color-danger-rgb), 0.15);
+    color: var(--ion-color-danger);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+}
+
+.premium-chips {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.premium-chip {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 4px 12px 4px 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.ion-palette-dark .premium-chip {
+  background: #1e1e1e;
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chip-icon-box {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  
+  ion-icon {
+    color: white;
+    font-size: 0.9rem;
+  }
+}
+
+.chip-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ion-color-dark);
+}
+
+.ion-palette-dark .chip-label {
+  color: white;
+}
+
+::ng-deep .leaflet-control-layers {
+  display: none;
+}
+
+.pulse-marker {
+  animation: gps-pulse 2s infinite;
+  transform-origin: center;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes gps-pulse {
+  0% { 
+    stroke-width: 0;
+    stroke-opacity: 1;
+  }
+  70% { 
+    stroke-width: 25px;
+    stroke-opacity: 0;
+  }
+  100% { 
+    stroke-width: 0;
+    stroke-opacity: 0;
+  }
+}
+
+/* Buscador GPS UI */
+.fab-search {
+  bottom: 20px;
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 20px;
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ion-color-dark);
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    color: var(--ion-color-medium);
+    margin-top: 0;
+  }
+}
+
+/* Modificadores para Forzar Visibilidad contra Transparencias Accidentales */
+ion-modal ion-item,
+ion-item.search-input-wrapper,
+ion-list ion-item {
+  --background: rgba(255, 255, 255, 0.95) !important;
+  --color: #000000 !important;
+  color: #000000 !important;
+  
+  h2, p {
+    color: #000000 !important;
+  }
+}
+ion-input, ion-textarea {
+  --color: #000000 !important;
+}
+
+.search-result-card {
+  background: var(--ion-color-light);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  h3 {
+    margin-top: 0;
+    font-weight: bold;
+    color: var(--ion-color-success);
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: var(--ion-color-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+}
+
+/* Buscador Premium Integrado en Mapa */
+.floating-search-container {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 380px;
+  z-index: 9999 !important;
+  transition: all 0.3s ease;
+  
+  ion-searchbar {
+    padding: 0;
+    --background: rgba(255, 255, 255, 0.65) !important; /* Más transparente para que pase el cristal */
+    --border-radius: 24px;
+    --box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2); /* Sombra elegante de Glassmorphism */
+    --color: #1e293b;
+    --placeholder-color: #475569;
+    --icon-color: var(--ion-color-primary);
+    --clear-button-color: #64748b;
+    
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    
+    &.searchbar-has-focus {
+      --box-shadow: 0 12px 32px rgba(31, 38, 135, 0.3);
+      --background: rgba(255, 255, 255, 0.95) !important;
+    }
+  }
+
+  /* Menú Desplegable Predictivo */
+  .autocomplete-dropdown {
+    margin-top: 8px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 12px 32px rgba(30, 58, 138, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+
+    .transparent-list {
+      background: transparent;
+      padding: 0;
+
+      ion-item {
+        --background: transparent;
+        --color: #1e293b;
+        --border-color: rgba(0, 0, 0, 0.05);
+
+        h2 {
+          font-weight: 600;
+          font-size: 14px;
+        }
+        p {
+          font-size: 11px;
+          color: #64748b;
+        }
+
+        &:hover, &:active {
+          --background: rgba(59, 130, 246, 0.1); /* Efecto hover azulado */
+        }
+      }
+    }
+  }
+}
+
+.ion-palette-dark .floating-search-container ion-searchbar {
+  --background: rgba(20, 20, 20, 0.85);
+  --color: #f8fafc;
+  --placeholder-color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  
+  &.searchbar-has-focus {
+    --background: rgba(30, 30, 30, 0.95);
+  }
+}
+
+/* Lumina FAB Container apilado */
+.lumina-fab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado perfecto entre botones */
+  transform: translateY(20px);
+  margin-right: 5px;
+
+  /* FABs Modernos (Premium Glassmorphism) */
+  .glass-fab {
+    --background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    --box-shadow: 0 8px 32px rgba(0, 122, 255, 0.15); /* Sombra basada en Primary */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    margin: 0;
+    transition: all 0.3s ease;
+
+    &.active-glass {
+      --background: var(--ion-color-secondary);
+      --color: #ffffff;
+      --box-shadow: 0 8px 32px rgba(var(--ion-color-secondary-rgb), 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.ion-palette-dark .lumina-fab-container .glass-fab {
+  --background: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  &.active-glass {
+    --background: var(--ion-color-secondary);
+  }
+}
+
+/* Modificadores globales para popups con Manrope/Inter */
+::ng-deep .capsule-popup {
+  .leaflet-popup-content-wrapper {
+    h3 {
+      font-family: var(--ion-heading-font-family);
+      letter-spacing: -0.3px;
+    }
+    p, b, span {
+      font-family: var(--ion-font-family);
+    }
+  }
+}
+
+/* ==============================================================
+   LUMINA TRANSIT - NATIVE MAP LAYER (POPUP GLASSMORPHISM)
+   ============================================================== */
+
+/* Native Leaflet Popup Overrides */
+::ng-deep .capsule-popup {
+  .leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 122, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 2px;
+    
+    h3 {
+      font-family: var(--ion-heading-font-family);
+      letter-spacing: -0.3px;
+    }
+    p, b, span, div {
+      font-family: var(--ion-font-family);
+    }
+  }
+
+  .leaflet-popup-tip {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 30px rgba(0, 122, 255, 0.15);
+  }
+}
+
+/* Floating Search Bar Restyling */
+.floating-search-container {
+  top: 50px !important; 
+  border-radius: 40px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.floating-search-container ion-searchbar {
+  --border-radius: 40px;
+}

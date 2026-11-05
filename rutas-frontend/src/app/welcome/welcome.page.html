@@ -1,0 +1,98 @@
+<ion-content [fullscreen]="true" class="welcome-content">
+  <div class="welcome-container">
+    <div class="logo-hero">
+      <img src="assets/logo.png" class="main-logo" alt="Logo">
+      <h1 class="app-title">Zacatecas Bus Tracker</h1>
+      <p class="app-subtitle">Tu guía completa de transporte público</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Card 1 -->
+      <div class="feature-card glass-card fade-in-up" style="animation-delay: 0.1s;">
+        <div class="icon-box bg-purple">
+          <ion-icon name="map" color="light"></ion-icon>
+        </div>
+        <div>
+          <h3>Mapa Interactivo</h3>
+          <p>Visualiza el trayecto exacto de todas las rutas, con sus paradas de ida y regreso.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feature-card glass-card fade-in-up" style="animation-delay: 0.2s;">
+        <div class="icon-box bg-green">
+          <ion-icon name="cloud-offline" color="light"></ion-icon>
+        </div>
+        <div>
+          <h3>100% Sin Datos</h3>
+          <p>Las rutas están incrustadas en tu celular. Busca trayectos offline sin usar tus megas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTRUCCIONES RÁPIDAS -->
+    <div class="instructions-section fade-in-up" style="animation-delay: 0.3s; margin-top: 25px;">
+      <div style="background: rgba(255, 255, 255, 0.9); display: inline-block; padding: 6px 16px; border-radius: 20px; margin-bottom: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+        <h2 style="color: #1e293b; font-size: 1.1rem; margin: 0; font-weight: 800; text-shadow: none;"><ion-icon name="help-circle" style="vertical-align: text-bottom; margin-right: 5px; color: #3b82f6;"></ion-icon> Instrucciones Rápidas</h2>
+      </div>
+      <div class="features-grid" style="margin-bottom: 25px;">
+        <div class="feature-card glass-card">
+          <div class="icon-box bg-blue">
+            <ion-icon name="menu-outline" color="light"></ion-icon>
+          </div>
+          <div style="text-align: left;">
+            <h3>1. Menú Lateral</h3>
+            <p>Abre el menú presionando las tres rayas (arriba a la izquierda) para buscar todas las rutas.</p>
+          </div>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="icon-box bg-purple">
+            <ion-icon name="bus-outline" color="light"></ion-icon>
+          </div>
+          <div style="text-align: left;">
+            <h3>2. Enciende el Recorrido</h3>
+            <p>Enciende cualquier 'Ruta de Ida' o 'Regreso'. El mapa dibujará el camino exacto del camión.</p>
+          </div>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="icon-box bg-green">
+            <ion-icon name="location-outline" color="light"></ion-icon>
+          </div>
+          <div style="text-align: left;">
+            <h3>3. Explora Paraderos</h3>
+            <p>Toca los puntos azules en el mapa para descubrir los nombres de las paradas y conexiones.</p>
+          </div>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="icon-box" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">
+            <ion-icon name="search-outline" color="light"></ion-icon>
+          </div>
+          <div style="text-align: left;">
+            <h3>4. Buscador Inteligente</h3>
+            <p>Escribe el nombre de plazas, escuelas o locales. La app te dirá qué parada te queda más cerca de tu destino.</p>
+          </div>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="icon-box" style="background: linear-gradient(135deg, #0ea5e9, #0369a1);">
+            <ion-icon name="walk-outline" color="light"></ion-icon>
+          </div>
+          <div style="text-align: left;">
+            <h3>5. Paradas Cercanas</h3>
+            <p>Toca el ícono del peatón en el mapa para descubrir qué rutas pasan a menos de 750 metros de ti usando GPS.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-footer fade-in-up" style="animation-delay: 0.5s;">
+      <ion-button expand="block" size="large" class="gradient-btn" routerLink="/home">
+        Ir al Mapa Principal
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

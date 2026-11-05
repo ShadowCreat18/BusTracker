@@ -1,0 +1,7 @@
+{
+  "name": "rutas-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

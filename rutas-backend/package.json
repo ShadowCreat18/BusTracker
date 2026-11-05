@@ -1,0 +1,44 @@
+{
+  "name": "rutas-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend RESTful con Strapi CMS para la gestión de rutas y paradas de transporte urbano (BusTracker Zacatecas)",
+  "author": "Christian Israel Esparza Solis",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@mapbox/polyline": "^1.2.1",
+    "@strapi/plugin-cloud": "5.38.0",
+    "@strapi/plugin-users-permissions": "5.38.0",
+    "@strapi/strapi": "5.38.0",
+    "axios": "^1.13.6",
+    "better-sqlite3": "12.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "1d40c9e9-42ca-488d-add4-1183e59bd2bb",
+    "installId": "20ee2a177aacf79de3018220ffba5cd3aae38b32bd2d1cc08526785a6a6a8bfd"
+  }
+}

@@ -1,0 +1,134 @@
+<!-- MENÚ LATERAL -->
+<ion-menu contentId="main-content" type="overlay" class="premium-menu">
+  
+  <div class="menu-header-bg">
+    <div class="menu-header-content">
+      <img src="assets/logo.png" alt="Zacatecas Tracker" class="menu-logo">
+      <h2 class="menu-app-title">Zacatecas Tracker</h2>
+      <p class="menu-app-subtitle">Rutas y Paraderos</p>
+    </div>
+  </div>
+
+  <ion-content class="glass-content">
+    <ion-list class="transparent-list">
+      <ion-accordion-group>
+        <ion-accordion value="ida">
+          <ion-item slot="header" class="menu-item-glass">
+            <ion-label>Rutas de Ida</ion-label>
+          </ion-item>
+          <div class="list-padding" slot="content">
+            <div class="route-card" *ngFor="let ruta of rutasIda">
+              <div class="route-color-bar" [style.backgroundColor]="ruta.color"></div>
+              <ion-item lines="none" class="transparent-item">
+                <ion-label>
+                  <h2 class="route-title">{{ ruta.name }}</h2>
+                  <p class="route-subtitle" style="white-space: normal; line-height: 1.3; font-size: 0.8rem; margin-top: 5px;">
+                    <strong>Inicio:</strong> {{ ruta.startStopName }}<br>
+                    <strong>Fin:</strong> {{ ruta.endStopName }}
+                  </p>
+                </ion-label>
+                <ion-toggle slot="end" [(ngModel)]="ruta.isOn" (ionChange)="toggleRoute(ruta)" color="primary" class="modern-toggle"></ion-toggle>
+              </ion-item>
+            </div>
+          </div>
+        </ion-accordion>
+
+        <ion-accordion value="regreso">
+          <ion-item slot="header" class="menu-item-glass">
+            <ion-label>Rutas de Regreso</ion-label>
+          </ion-item>
+          <div class="list-padding" slot="content">
+            <div class="route-card" *ngFor="let ruta of rutasRegreso">
+              <div class="route-color-bar" [style.backgroundColor]="ruta.color"></div>
+              <ion-item lines="none" class="transparent-item">
+                <ion-label>
+                  <h2 class="route-title">{{ ruta.name }}</h2>
+                  <p class="route-subtitle" style="white-space: normal; line-height: 1.3; font-size: 0.8rem; margin-top: 5px;">
+                    <strong>Inicio:</strong> {{ ruta.startStopName }}<br>
+                    <strong>Fin:</strong> {{ ruta.endStopName }}
+                  </p>
+                </ion-label>
+                <ion-toggle slot="end" [(ngModel)]="ruta.isOn" (ionChange)="toggleRoute(ruta)" color="secondary" class="modern-toggle"></ion-toggle>
+              </ion-item>
+            </div>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer class="ion-no-border transparent-footer">
+    <div class="menu-footer-card">
+      <ion-icon name="map" color="primary"></ion-icon>
+      <p><b>Nota:</b> Selecciona tus rutas de Ida o Regreso para verlas trazadas en el mapa central.</p>
+    </div>
+  </ion-footer>
+</ion-menu>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="ion-page premium-page" id="main-content">
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/welcome" color="light">
+          <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center app-title-header" style="font-family: var(--ion-heading-font-family); font-weight: 800; color: #ffffff; font-size: 18px; letter-spacing: 0.5px;">
+        Rutas Zac - Gpe
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="loading-overlay" *ngIf="isLoading">
+      <div class="loading-content">
+        <ion-spinner name="crescent" color="primary"></ion-spinner>
+        <p>Cargando Paradas y Rutas...</p>
+      </div>
+    </div>
+
+    <!-- Buscador Premium (Lugares y Paradas) -->
+    <div class="floating-search-container" slot="fixed">
+      <ion-searchbar 
+        [(ngModel)]="searchQuery" 
+        (ionInput)="onSearchInput($event)"
+        (ionClear)="clearSearch()"
+        (search)="searchLocation()" 
+        placeholder="¿A dónde vas?"
+        search-icon="location-outline"
+        show-clear-button="focus"
+        animated="true">
+      </ion-searchbar>
+
+      <!-- Menú Desplegable Autocomplete -->
+      <div class="autocomplete-dropdown glass-card" *ngIf="suggestions.length > 0">
+        <ion-list lines="full" class="transparent-list">
+          <ion-item *ngFor="let s of suggestions" (click)="selectSuggestion(s)" button detail="false">
+            <ion-icon name="location-outline" slot="start" color="primary"></ion-icon>
+            <ion-label>
+              <h2>{{ s.title }}</h2>
+              <p>{{ s.subtitle }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Botones Flotantes Laterales (Fluid Navigator Style) -->
+    <ion-fab vertical="center" horizontal="end" slot="fixed" class="lumina-fab-container">
+      <ion-fab-button class="glass-fab" (click)="centerMapOnUser()">
+        <ion-icon name="locate-outline" color="primary"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="glass-fab" (click)="showNearbyStops()">
+        <ion-icon name="walk-outline" color="secondary"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </ion-content>
+</div>
